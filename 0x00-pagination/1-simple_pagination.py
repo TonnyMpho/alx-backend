@@ -36,6 +36,12 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        method that takes two integer arguments page with default value 1
+        and page_size with default value 10
+        if the input arguments are out of range for the dataset,
+        return an empty list.
+        """
         assert isinstance(page, int) and page > 0
         assert type(page_size) is int and page_size > 0
 
