@@ -4,12 +4,13 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    def __init__(self):
-        super().__init__()
-        self.keys = []
     """
     class that inherits from BaseCaching and is a caching system
     """
+    def __init__(self):
+        super().__init__()
+        self.keys = []
+
     def put(self, key, item):
         """
         assign to the dictionary cache_data the item value for the key key
