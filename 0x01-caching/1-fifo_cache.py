@@ -14,7 +14,8 @@ class FIFOCache(BaseCaching):
     def put(self, key, item):
         """
         assign to the dictionary cache_data the item value for the key key
-        If the number of items in cache_data is higher that BaseCaching.MAX_ITEMS:
+        If the number of items in cache_data is higher that
+        BaseCaching.MAX_ITEMS:
         discard the first item put in cache (FIFO algorithm)
         print DISCARD: with the key discarded and followed by a new line
         """
