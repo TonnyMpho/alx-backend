@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ FIFO caching """
 from base_caching import BaseCaching
 
@@ -18,13 +18,16 @@ class FIFOCache(BaseCaching):
         print DISCARD: with the key discarded and followed by a new line
         """
         if key is not None and item is not None:
-            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-                discard = self.keys.pop(0)
-                del self.cache_data[discard]
-                print("DISCARD: {}".format(discard))
+            if key in self.cache_data.keys():
+                self.cache_data[key] = item
+            else:
+                if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+                    discard = self.keys.pop(0)
+                    del self.cache_data[discard]
+                    print("DISCARD: {}".format(discard))
 
-            self.cache_data[key] = item
-            self.keys.append(key)
+                self.cache_data[key] = item
+                self.keys.append(key)
 
     def get(self, key):
         """
