@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ 3. Parametrize templates """
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_babel import Babel, _
 
 app = Flask(__name__)
