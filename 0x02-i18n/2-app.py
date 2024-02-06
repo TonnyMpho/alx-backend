@@ -20,7 +20,7 @@ def index():
     """
     basic Flask app with a single / route and an index.html template
     """
-    return render_template("1-index.html")
+    return render_template("0-index.html")
 
 
 if __name__ == "__main__":
