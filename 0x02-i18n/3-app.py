@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Get locale from request """
+""" 3. Parametrize templates """
 from flask import Flask, render_template
 from flask_babel import Babel, _
 
@@ -31,7 +31,7 @@ def index():
     """
     title = "Welcome to Holberton"
     header = "Hello world"
-    return render_template("1-index.html", title=_(title), header=_(header))
+    return render_template("3-index.html", title=_(title), header=_(header))
 
 
 if __name__ == "__main__":

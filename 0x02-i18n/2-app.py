@@ -4,6 +4,7 @@ from flask import Flask, render_template
 from flask_babel import Babel
 
 app = Flask(__name__)
+A
 babel = Babel(app)
 
 
@@ -29,7 +30,7 @@ def index():
     """
     basic Flask app with a single / route and an index.html template
     """
-    return render_template("1-index.html")
+    return render_template("2-index.html")
 
 
 if __name__ == "__main__":
