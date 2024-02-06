@@ -2,11 +2,11 @@
 """ 0. Basic Flask app """
 from flask import Flask, render_template
 
-
 app = Flask(__name__)
 
+
 @app.route("/")
-def index:
+def index():
     """
     basic Flask app with a single / route and an index.html template
     """
