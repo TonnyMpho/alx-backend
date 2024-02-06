@@ -29,8 +29,8 @@ def index():
     """
     basic Flask app with a single / route and an index.html template
     """
-    title = "home_title"
-    header = "Home_header"
+    title = "Welcome to Holberton"
+    header = "Hello world!"
     return render_template("3-index.html", title=_(title), header=_(header))
 
 
