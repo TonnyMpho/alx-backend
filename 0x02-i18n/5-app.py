@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ 5. Mock logging in """
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, g
 from flask_babel import Babel
 
 app = Flask(__name__)
@@ -60,7 +60,7 @@ def index():
     """
     basic Flask app with a single / route and an index.html template
     """
-    return render_template("4-index.html")
+    return render_template("5-index.html")
 
 
 if __name__ == "__main__":
