@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-""" 3. Parametrize templates """
+""" 4. Force locale with URL parameter """
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, _
 
 app = Flask(__name__)
 babel = Babel(app)
@@ -23,7 +23,7 @@ def get_locale():
     """ Get locale from request """
     locale = request.args.get('locale')
 
-    if locale is not None:
+    if locale:
         if locale in app.config['LANGUAGES']:
             return locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
@@ -34,9 +34,9 @@ def index():
     """
     basic Flask app with a single / route and an index.html template
     """
-    title = "Welcome to Holberton"
-    header = "Hello world!"
-    return render_template("3-index.html", title=title, header=header)
+    title = "home_title"
+    header = "home_header"
+    return render_template("4-index.html", title=_(title), header=_(header))
 
 
 if __name__ == "__main__":
