@@ -29,9 +29,7 @@ def index():
     """
     basic Flask app with a single / route and an index.html template
     """
-    title = "Welcome to Holberton"
-    header = "Hello world!"
-    return render_template("3-index.html", title=title, header=header)
+    return render_template("3-index.html")
 
 
 if __name__ == "__main__":
