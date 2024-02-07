@@ -29,7 +29,7 @@ def get_locale():
 
 
 @app.route("/")
-def index():
+def index() -> str:
     """
     basic Flask app with a single / route and an index.html template
     """
