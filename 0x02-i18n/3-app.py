@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ 3. Parametrize templates """
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 app = Flask(__name__)
 babel = Babel(app)
@@ -31,7 +31,7 @@ def index():
     """
     title = "Welcome to Holberton"
     header = "Hello world!"
-    return render_template("3-index.html", title=_(title), header=_(header))
+    return render_template("3-index.html", title=title, header=header)
 
 
 if __name__ == "__main__":
