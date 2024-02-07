@@ -9,7 +9,7 @@ babel = Babel(app)
 
 class Config:
     """
-    Config class
+    Config class for babel
     """
     LANGUAGES = ["en", "fr"]
 
@@ -29,7 +29,7 @@ def get_locale():
 
 
 @app.route("/")
-def index() -> str:
+def index():
     """
     basic Flask app with a single / route and an index.html template
     """
