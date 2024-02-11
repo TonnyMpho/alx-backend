@@ -31,6 +31,26 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
+@babel.timezoneselector
+def get_timezone():
+    """ function and use the babel.timezoneselector decorator """
+    timezone = request.args.get('timezone')
+    if timezone:
+        try:
+            pytz.timezone(timezone)
+            return timezone
+        except pytz.UnknownTimeZoneError:
+            pass
+
+    if g.user and g.user.get('timezone'):
+        try:
+            pytz.timezone(g.user.get('timezone'))
+            return g.user.get('timezone')
+        except pytz.UnknownTimeZoneError:
+            pass
+    return app.config['BABEL_DEFAULT_TIMEZONE']
+
+
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
     2: {"name": "Beyonce", "locale": "en", "timezone": "US/Central"},
@@ -64,7 +84,7 @@ def index():
     """
     basic Flask app with a single / route and an index.html template
     """
-    return render_template("6-index.html")
+    return render_template("7-index.html")
 
 
 if __name__ == "__main__":
